@@ -11,17 +11,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from sweet device
 $(call inherit-product, device/xiaomi/sweet/device.mk)
 
-# Inherit common Evolution-X Stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+# Cherish Stuff
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
-# Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
+USE_PIXEL_CHARGING := true
+TARGET_USES_BLUR := true
+TARGET_GAPPS_ARCH := arm64
+CHERISH_BUILD_TYPE=InnOvaTioN
+WITH_GMS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=bezke
 TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_USES_BLUR := true
 
-# Evolution-X Stuff
-EVO_BUILD_TYPE := OFFICIAL
-
-PRODUCT_NAME := evolution_sweet
+PRODUCT_NAME := cherish_sweet
 PRODUCT_DEVICE := sweet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 10 Pro
