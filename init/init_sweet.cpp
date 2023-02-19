@@ -107,6 +107,7 @@ void vendor_load_properties() {
         device = "sweet";
         description = "sweet_global-user 12 SKQ1.210908.001 V13.0.8.0.SKFMIXM release-keys";
         mod_device = "sweet_global";
+        property_override("ro.boot.product.hardware.sku", "sweet");
     }
 
     set_ro_product_prop("device", device);
